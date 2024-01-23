@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>QR Code Generator</h1>
-    <label for="text-input">Enter text or URL:</label>
-    <input type="text" id="text-input" placeholder="Type here...">
-    <button onclick="generateQRCode()">Generate QR Code</button>
-    <div id="qrcode"></div>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <label for="text-input" style="color: #333;">Enter text or URL:</label>
+        <input type="text" id="text-input" placeholder="Type here...">
+        <button onclick="generateQRCode()">Generate QR Code</button>
+        <div id="qrcode"></div>
 
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-    <script>
-        function generateQRCode() {
-            var inputValue = document.getElementById('text-input').value;
-            var qrcode = new QRCode(document.getElementById('qrcode'), {
-                text: inputValue,
-                width: 128,
-                height: 128
-            });
-        }
-    </script>
+        <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+        <script>
+            function generateQRCode() {
+                var inputValue = document.getElementById('text-input').value;
+                var qrcode = new QRCode(document.getElementById('qrcode'), {
+                    text: inputValue,
+                    width: 128,
+                    height: 128
+                });
+            }
+        </script>
+    </div>
 </body>
 </html>
